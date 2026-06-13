@@ -1,0 +1,17 @@
+{
+  "version": "0.2.1",
+  "configurations": [
+    {
+      "type": "cppgdb",
+      "name": "Native C++ (WSL gdb) - ManagedConsole",
+      "project": "CMakeLists.txt",
+      "projectTarget": "managed_console",
+      "debuggerConfiguration": "gdb",
+      "gdbpath": "/usr/bin/gdb",
+      "program": "~/.vs/NativeConsole/out/build/linux-debug/managed/ManagedConsole",
+      "cwd": "~/.vs/NativeConsole/out/build/linux-debug/managed",
+      "args": [],
+      "env": {}
+    }
+  ]
+}

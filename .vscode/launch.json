@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Native C++ (gdb) - ManagedConsole",
+      "type": "cppdbg",
+      "request": "launch",
+      "preLaunchTask": "CMake build (linux-debug)",
+      "program": "${workspaceFolder}/out/build/linux-debug/managed/ManagedConsole",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/out/build/linux-debug/managed",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "text": "set breakpoint pending on",
+          "description": "bind breakpoints when libUtils.so is lazily loaded on first P/Invoke"
+        },
+        {
+          "text": "handle SIGSEGV nostop noprint pass",
+          "description": "the CLR uses SIGSEGV during normal operation; don't halt gdb on it",
+          "ignoreFailures": true
+        },
+        {
+          "text": "-enable-pretty-printing",
+          "description": "enable gdb pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
